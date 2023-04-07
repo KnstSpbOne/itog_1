@@ -1,5 +1,5 @@
 ﻿// функция заполнения массива
-string[] GetArray ()
+string[] GetArray (int inputArraySize)
 {
     Console.WriteLine("Введите элементы массива");
     string[] inputArray=new string[inputArraySize-1];
@@ -12,6 +12,10 @@ string[] GetArray ()
 
 // main
 {
+    Console.Write("Введите длину исходного массива");
+    int inputArraySize=Console.ReadLine();
+    string[] inputArray=GetArray(inputArraySize);
+
 
 }
     
