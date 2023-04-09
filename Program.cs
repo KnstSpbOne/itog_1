@@ -5,23 +5,18 @@
     int inputArraySize=Convert.ToInt32 (Console.ReadLine());
     Console.WriteLine("Введите элементы массива");
     string[] inputArray=new string[inputArraySize];
-    for (int counter=0, int outputArraySize=0; counter < inputArraySize; counter++)
+    for (int counter=0; counter < inputArraySize; counter++)
     {
-        inputArray[counter]=Console.ReadLine();
-        if (inputArray[counter] <=3)
-        {
-            int outputArraySize++;
-        }
+        inputArray[counter] =Console.ReadLine();
     }
-    Console.WriteLine("массив заполнен");
-    
-    // выборка подходящих элементов 1-й способ через методы класса System.Array
-    string[] outputArray=Array.FindAll(inputArray, element => element.length <=3);
+    // выборка подходящих элементов через методы класса System.Array
+    // и формирование результирующего массива
+    string[] outputArray=Array.FindAll(inputArray, element => element.Length <=3);
+    // вывод результата
     Console.Write("Результирующий массив:  ");
-    for (int counter=0; counter<outputArray.Length, counter++)
+    for (int counter=0; counter<outputArray.Length; counter++)
     {
-        Console.Write (outputArray[counter]);
+        Console.Write ("   {0}", outputArray[counter]);
     }
-
 }
     
