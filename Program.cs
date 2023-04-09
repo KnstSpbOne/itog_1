@@ -1,31 +1,27 @@
-﻿// функция заполнения массива
-string[] GetArray (int inputArraySize)
+﻿// main
 {
-    Console.WriteLine("Введите элементы массива");
-    string[] inputArray=new string[inputArraySize];
-    for (int counter=0; counter < inputArraySize; counter++)
-    {
-        inputArray[counter]=Console.ReadLine();
-    }
-    return inputArray;
-}
-
-// main
-{
+    // ввод исходного массива
     Console.Write("Введите длину исходного массива  ");
     int inputArraySize=Convert.ToInt32 (Console.ReadLine());
-    string[] inputArray=GetArray(inputArraySize);
-    Console.WriteLine("массив заполнен");
-    int outputArraySize=0;
-    for (int counter=0; counter<inputArraySize; counter++)
+    Console.WriteLine("Введите элементы массива");
+    string[] inputArray=new string[inputArraySize];
+    for (int counter=0, int outputArraySize=0; counter < inputArraySize; counter++)
     {
-        if (inputArray[counter].Length <= 3)
+        inputArray[counter]=Console.ReadLine();
+        if (inputArray[counter] <=3)
         {
-            outputArraySize++;
+            int outputArraySize++;
         }
     }
-    Console.WriteLine("количество подходящих элементов- {0}", outputArraySize);
+    Console.WriteLine("массив заполнен");
     
-     
+    // выборка подходящих элементов 1-й способ через методы класса System.Array
+    string[] outputArray=Array.FindAll(inputArray, element => element.length <=3);
+    Console.Write("Результирующий массив:  ");
+    for (int counter=0; counter<outputArray.Length, counter++)
+    {
+        Console.Write (outputArray[counter]);
+    }
+
 }
     
